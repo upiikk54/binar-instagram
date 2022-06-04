@@ -29,7 +29,7 @@ export default function UpdatePosts() {
             userToUpdatePayload.append("picture", picturePost);
 
             const updateRequest = await axios.put(
-                `http://localhost:8087/posts/${id}`, userToUpdatePayload, {
+                `https://binar-instagram-clone.herokuapp.com/posts/${id}`, userToUpdatePayload, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data",
@@ -53,7 +53,7 @@ export default function UpdatePosts() {
     const getPosts = async () => {
         try {
 
-            const responsePosts = await axios.get(`http://localhost:8087/api/posts/${id}`)
+            const responsePosts = await axios.get(`https://binar-instagram-clone.herokuapp.com/api/posts/${id}`)
 
             const dataPosts = await responsePosts.data.data.getdata;
 
@@ -92,7 +92,7 @@ export default function UpdatePosts() {
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Row>
-                        <img src={`http://localhost:8087/public/files/${data.picture}`} alt="" style={{ height: "250px", width:"250px" }} />
+                        <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${data.picture}`} alt="" style={{ height: "250px", width:"250px" }} />
                         <Form.Label className="mt-3">Picture</Form.Label>
                     </Row>
                     <Form.Control

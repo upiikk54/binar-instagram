@@ -25,7 +25,7 @@ export default function Login() {
             };
 
             const loginRequest = await axios.post(
-                "http://localhost:8087/auth/login",
+                "https://binar-instagram-clone.herokuapp.com/auth/login",
                 userToLoginPayload
             );
 
@@ -54,7 +54,7 @@ export default function Login() {
             };
 
             const loginGoogleRequest = await axios.post(
-                "http://localhost:8087/auth/login-google",
+                "https://binar-instagram-clone.herokuapp.com/auth/login-google",
                 userToLoginPayload
             );
 

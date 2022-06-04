@@ -46,7 +46,7 @@ function Home() {
         const token = localStorage.getItem("token");
 
         const currentUserRequest = await axios.get(
-          "http://localhost:8087/auth/me",
+          "https://binar-instagram-clone.herokuapp.com/auth/me",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -87,7 +87,7 @@ function Home() {
   const posts = async () => {
     try {
       const dataPosts = await axios.get(
-        `http://localhost:8087/api/posts`
+        `https://binar-instagram-clone.herokuapp.com/api/posts`
       )
 
       const payloadData = await dataPosts.data.data.getDataAll;
@@ -105,7 +105,7 @@ function Home() {
       const token = localStorage.getItem("token");
 
       const createRequest = await axios.delete(
-        `http://localhost:8087/posts/${postToDelete.id}`,
+        `https://binar-instagram-clone.herokuapp.com/posts/${postToDelete.id}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -189,7 +189,7 @@ function Home() {
           {post.map((post) => (
             <Col md={4} key={post.id}>
               <Card className="shadow" style={{ marginTop: "2rem" }} border="secondary">
-                <img src={`http://localhost:8087/public/files/${post.picture}`} alt="" style={{ height: "300px" }} />
+                <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${post.picture}`} alt="" style={{ height: "300px" }} />
                 <div className="card-body">
                   <p className="card-text fw-bold">{post.title}</p>
                   <p className="card-text">{post.description}</p>

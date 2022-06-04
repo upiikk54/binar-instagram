@@ -29,7 +29,7 @@ export default function Register() {
             userToRegisterPayload.append("picture", pictureField);
 
             const registerRequest = await axios.post(
-                "http://localhost:8087/auth/register",
+                "https://binar-instagram-clone.herokuapp.com/auth/register",
                 userToRegisterPayload, {
                     headers: {
                         "Content-Type": "multipart/form-data",
