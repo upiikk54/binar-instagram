@@ -30,7 +30,6 @@ code {
   background-image: url(background-page.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(5px);
 }
 
 .bg-allform{
