@@ -33,7 +33,7 @@ code {
   filter: blur(5px);
 }
 
-.bg-form{
+.bg-allform{
   background-image: url(background-form.jpg);
   background-repeat: no-repeat;
   background-size: cover;
