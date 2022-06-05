@@ -34,6 +34,13 @@ code {
 }
 
 .bg-form{
+  background-image: url(background-form.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(5px);
+}
+
+.bg-form{
   background-color: #432169;
 }
 
