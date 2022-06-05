@@ -35,9 +35,11 @@ code {
 
 .bg-allform{
   background-image: url(background-form.jpg);
+  width: 100vw;
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  filter: blur(5px);
+  /* filter: blur(5px); */
 }
 
 .bg-form{
@@ -66,5 +68,5 @@ code {
 }
 
 .radius{
-  border-radius: 25px
+  border-radius: 25px !important
 }

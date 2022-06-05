@@ -72,7 +72,7 @@ export default function Login() {
 
     return (
         <div className="bg-allform">
-            <Card style={{ width: '50rem' }} className="position-absolute top-50 start-50 translate-middle border-light">
+            <Card style={{ width: '50rem' }} className="position-absolute top-50 start-50 translate-middle radius border-light">
                 <Card.Body className="bg-form radius shadow-lg">
                     <div className="row">
                         <div className="col">
