@@ -153,7 +153,7 @@ function Home() {
         <Container>
         <div className="d-flex">
             <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${user.picture}`} className="rounded-circle img-profil" alt="" />
-            <p className="bg-nav fw-bold mt-3 ms-3">Welcome  {user.name}!</p>
+            <p className="bg-nav fw-bold mt-3 ms-3">Welcome  {user.name} !</p>
           </div>
           {/* <Navbar.Brand href="#home" className="fw-bold">Welcome {user.name}!</Navbar.Brand> */}
           <Navbar.Toggle />
