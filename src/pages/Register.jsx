@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Form, Container, Button, Alert } from "react-bootstrap";
+import { Form, Container, Button, Alert, Card } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -31,10 +31,10 @@ export default function Register() {
             const registerRequest = await axios.post(
                 "https://binar-instagram-clone.herokuapp.com/auth/register",
                 userToRegisterPayload, {
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                    },
-                }
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            }
             );
 
             const registerResponse = registerRequest.data;
@@ -52,58 +52,69 @@ export default function Register() {
     };
 
     return (
-        <Container className="my-5">
-            <h1 className="mb-3 text-center">Registrasi</h1>
-            <Form onSubmit={onRegister}>
-                <Form.Group className="mb-3">
-                    <Form.Label>Role</Form.Label>
-                    <Form.Select ref={roleField}>
-                        <option>Pilih Role</option>
-                        <option value="admin">Admin</option>
-                        <option value="user">User</option>
-                    </Form.Select>
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Nama</Form.Label>
-                    <Form.Control
-                        type="text"
-                        ref={nameField}
-                        placeholder="Masukkan nama"
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Email</Form.Label>
-                    <Form.Control
-                        type="text"
-                        ref={emailField}
-                        placeholder="Masukkan Email"
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control
-                        type="password"
-                        ref={passwordField}
-                        placeholder="Masukkan Password"
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>Picture</Form.Label>
-                    <Form.Control
-                        type="file"
-                        onChange={(e) => setPictureField(e.target.files[0])}
-                    />
-                </Form.Group>
-                <p>
-                    Sudah punya akun? Silakan <Link to="/login">Login</Link>
-                </p>
-                {errorResponse.isError && (
-                    <Alert variant="danger">{errorResponse.message}</Alert>
-                )}
-                <Button className="w-100" type="submit">
-                    Daftar
-                </Button>
-            </Form>
-        </Container>
+        <>
+            <Card style={{ width: '60rem' }} className="position-absolute top-50 start-50 translate-middle border-light">
+                <Card.Body className="bg-form radius shadow-lg">
+                    <div className="row">
+                        <div className="col">
+                            <img src="./images/register.png" className="img-register" alt="" />
+                        </div>
+                        <div className="col">
+                            <h1 className="mb-3 text-light">Registrasi Account</h1>
+                            <Form onSubmit={onRegister}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">Role</Form.Label>
+                                    <Form.Select ref={roleField}>
+                                        <option>Pilih Role</option>
+                                        <option value="admin">Admin</option>
+                                        <option value="user">User</option>
+                                    </Form.Select>
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">Nama</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        ref={nameField}
+                                        placeholder="Masukkan nama"
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">Email</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        ref={emailField}
+                                        placeholder="Masukkan Email"
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">Password</Form.Label>
+                                    <Form.Control
+                                        type="password"
+                                        ref={passwordField}
+                                        placeholder="Masukkan Password"
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">Picture</Form.Label>
+                                    <Form.Control
+                                        type="file"
+                                        onChange={(e) => setPictureField(e.target.files[0])}
+                                    />
+                                </Form.Group>
+                                <p className="text-light">
+                                    Sudah punya akun? Silakan <Link to="/login">Login</Link>
+                                </p>
+                                {errorResponse.isError && (
+                                    <Alert variant="danger">{errorResponse.message}</Alert>
+                                )}
+                                <Button className="w-100" type="submit">
+                                    Daftar
+                                </Button>
+                            </Form>
+                        </div>
+                    </div>
+                </Card.Body>
+            </Card>
+        </>
     );
 }

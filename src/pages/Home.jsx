@@ -23,7 +23,6 @@ function Home() {
     setShowModal(false)
   };
   const handleShowModal = (e, post) => {
-    console.log("ini log");
     e.preventDefault();
     setPostToDelete(post);
     setShowModal(true)
@@ -152,7 +151,10 @@ function Home() {
       {/* navbar */}
       <Navbar>
         <Container>
-          <p className="bg-nav fw-bold">Welcome  {user.name}!</p>
+        <div className="d-flex">
+            <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${user.picture}`} className="rounded-circle img-profil" alt="" />
+            <p className="bg-nav fw-bold mt-3 ms-3">Welcome  {user.name}!</p>
+          </div>
           {/* <Navbar.Brand href="#home" className="fw-bold">Welcome {user.name}!</Navbar.Brand> */}
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
@@ -188,7 +190,7 @@ function Home() {
         <Row>
           {post.map((post) => (
             <Col md={4} key={post.id}>
-              <Card className="shadow" style={{ marginTop: "2rem" }} border="secondary">
+              <Card className="shadow text-white bg-dark" style={{ marginTop: "2rem" }} border="dark">
                 <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${post.picture}`} alt="" style={{ height: "300px" }} />
                 <div className="card-body">
                   <p className="card-text fw-bold">{post.title}</p>
@@ -222,15 +224,6 @@ function Home() {
 
         </Modal.Footer>
       </Modal>
-
-      {/* footer */}
-      <Container className="mt-5">
-        <Row className="text-center">
-          <p className="bg-nav fw-bold">Alamat: Jalan menuju hati mu, aishh</p>
-          <p className="bg-nav fw-bold">Pradityaluthfi54@gmail.com</p>
-          <p className="bg-nav fw-bold">0812-5952-6461</p>
-        </Row>
-      </Container>
     </div>
   ) : (
     <Navigate to="/login" replace />

@@ -17,16 +17,46 @@ code {
   height: 200px;
 }
 
+.img-profil{
+  width: 5%;
+  height:5%;
+}
+
 .bg-nav{
   color: #ffffff;
 }
 
 .bg-all{
-  background-image: url(mob-shutterstock-481251031-20210610135721_1920x1080.jpg);
+  background-image: url(background-page.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-/* .bg-all{
-  background-color: #eae1f0;
-} */
+.bg-form{
+  background-color: #432169;
+}
+
+.bg-btn{
+  background-color: #25b3b0;
+}
+
+.img-login{
+  width: 85%;
+  height: 80%;
+}
+
+.img-edit{
+  width: 90%;
+  height: 90%;
+}
+
+.img-register{
+  width: 85%;
+  height: 65%;
+  margin-top: 23%;
+  margin-left: 10%;
+}
+
+.radius{
+  border-radius: 25px
+}

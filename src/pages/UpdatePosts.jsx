@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Form, Container, Button, Alert, Row } from "react-bootstrap";
+import { Form, Container, Button, Alert, Row, Card } from "react-bootstrap";
 import axios from "axios";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -71,47 +71,58 @@ export default function UpdatePosts() {
     console.log(data);
 
     return (
-        <Container className="my-5">
-            <h1 className="mb-3 text-center">update Postingan</h1>
-            <Form onSubmit={onupdate}>
-                <Form.Group className="mb-3">
-                    <Form.Label>title</Form.Label>
-                    <Form.Control
-                        type="text"
-                        ref={titleField}
-                        defaultValue={data.title}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Form.Label>description</Form.Label>
-                    <Form.Control
-                        type="text"
-                        ref={descriptionField}
-                        defaultValue={data.description}
-                    />
-                </Form.Group>
-                <Form.Group className="mb-3">
-                    <Row>
-                        <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${data.picture}`} alt="" style={{ height: "250px", width:"250px" }} />
-                        <Form.Label className="mt-3">Picture</Form.Label>
-                    </Row>
-                    <Form.Control
-                        type="file"
-                        onChange={(e) => setPicturePostField(e.target.files[0])}
-                    />
-                </Form.Group>
-                {errorResponse.isError && (
-                    <Alert variant="danger">{errorResponse.message}</Alert>
-                )}
-                <Button className="w-100" type="submit">
-                    Kirim
-                </Button>
-                <Link to="/">
-                    <Button className="w-100 mt-3" variant='danger'>
-                        kembali
-                    </Button>
-                </Link>
-            </Form>
-        </Container>
+        <>
+            <Card style={{ width: '65rem' }} className="position-absolute top-50 start-50 translate-middle border-light">
+                <Card.Body className="bg-form radius shadow-lg">
+                    <div className="row">
+                        <div className="col">
+                            <img src="../images/edit.png" className="img-edit mt-4 ms-4" alt="" />
+                        </div>
+                        <div className="col">
+                            <h1 className="mb-3 text-light">update Postingan</h1>
+                            <Form onSubmit={onupdate}>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">title</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        ref={titleField}
+                                        defaultValue={data.title}
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label className="text-light">description</Form.Label>
+                                    <Form.Control
+                                        type="text"
+                                        ref={descriptionField}
+                                        defaultValue={data.description}
+                                    />
+                                </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Row>
+                                        <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${data.picture}`} alt="" style={{ height: "250px", width: "250px" }} />
+                                        <Form.Label className="mt-3 text-light">Picture</Form.Label>
+                                    </Row>
+                                    <Form.Control
+                                        type="file"
+                                        onChange={(e) => setPicturePostField(e.target.files[0])}
+                                    />
+                                </Form.Group>
+                                {errorResponse.isError && (
+                                    <Alert variant="danger">{errorResponse.message}</Alert>
+                                )}
+                                <Button className="w-100" type="submit">
+                                    Kirim
+                                </Button>
+                                <Link to="/">
+                                    <Button className="w-100 mt-3" variant='danger'>
+                                        kembali
+                                    </Button>
+                                </Link>
+                            </Form>
+                        </div>
+                    </div>
+                </Card.Body>
+            </Card>
+        </>
     )
 }
