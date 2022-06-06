@@ -159,7 +159,7 @@ function Home() {
           )}
 
           {/* navbar */}
-          <Navbar>
+          <Navbar className="position-fixed fixed-top bg-all">
             <Container>
               <div className="d-flex">
                 <img src={`https://binar-instagram-clone.herokuapp.com/public/files/${user.picture}`} className="rounded-circle img-profil" alt="" />
