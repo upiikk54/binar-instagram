@@ -88,7 +88,7 @@ export default function Login() {
                                     <label>Email</label>
                                 </Form.Group>
                                 <Form.Group className="mb-3 loginGroup">
-                                    <input type="text"
+                                    <input type="password"
                                         ref={passwordField}
                                         required />
                                     <label>Password</label>
