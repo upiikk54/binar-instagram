@@ -61,7 +61,7 @@ export default function Register() {
                         </div>
                         <div className="col">
                             <h1 className="mb-3 text-light">Registrasi Account</h1>
-                            <Form onSubmit={onRegister}>
+                            <Form onSubmit={onRegister} className="loginForm">
                                 <Form.Group className="mb-3">
                                     <Form.Label className="text-light">Role</Form.Label>
                                     <Form.Select ref={roleField}>
@@ -70,13 +70,11 @@ export default function Register() {
                                         <option value="user">User</option>
                                     </Form.Select>
                                 </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Nama</Form.Label>
-                                    <Form.Control
-                                        type="text"
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="text"
                                         ref={nameField}
-                                        placeholder="Masukkan nama"
-                                    />
+                                        required />
+                                    <label>Nama</label>
                                 </Form.Group>
                                 <Form.Group className="mb-3">
                                     <Form.Label className="text-light">Email</Form.Label>
