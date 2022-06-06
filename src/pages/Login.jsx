@@ -80,22 +80,18 @@ export default function Login() {
                         </div>
                         <div className="col">
                             <h1 className="mb-3 text-light">Login Account</h1>
-                            <Form onSubmit={onLogin}>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Email</Form.Label>
-                                    <Form.Control
-                                        type="text"
+                            <Form onSubmit={onLogin} className="loginForm">
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="text"
                                         ref={emailField}
-                                        placeholder="Masukkan Email"
-                                    />
+                                        required />
+                                    <label>Email</label>
                                 </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Password</Form.Label>
-                                    <Form.Control
-                                        type="password"
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="text"
                                         ref={passwordField}
-                                        placeholder="Masukkan Password"
-                                    />
+                                        required />
+                                    <label>Password</label>
                                 </Form.Group>
                                 <div className="my-3">
                                     <GoogleOAuthProvider clientId="155043602177-a6mj7v3iv3ptrkfq8c0cioebm157sufu.apps.googleusercontent.com">

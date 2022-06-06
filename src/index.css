@@ -38,7 +38,39 @@ code {
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
-  /* filter: blur(5px); */
+}
+
+.loginForm .loginGroup input{
+  outline: none;
+  background: transparent;
+  border: none;
+  color: lightblue;
+  margin: 10px 0;
+  border-bottom: 2px solid;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.loginForm .loginGroup {
+  position: relative;
+}
+
+.loginForm .loginGroup label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  font-size: 18px;
+  color: white;
+  padding: 10px 0;
+}
+
+.loginForm .loginGroup input:focus ~ label,
+.loginForm .loginGroup input:valid ~ label{
+  top: -20px;
+  left: 0;
+  color: white;
+  font-size: 14px;
 }
 
 .bg-form{
