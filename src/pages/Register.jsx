@@ -76,28 +76,24 @@ export default function Register() {
                                         required />
                                     <label>Nama</label>
                                 </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Email</Form.Label>
-                                    <Form.Control
-                                        type="text"
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="text"
                                         ref={emailField}
-                                        placeholder="Masukkan Email"
-                                    />
+                                        required />
+                                    <label>Email</label>
                                 </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Password</Form.Label>
-                                    <Form.Control
-                                        type="password"
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="password"
                                         ref={passwordField}
-                                        placeholder="Masukkan Password"
-                                    />
+                                        required />
+                                    <label>Password</label>
                                 </Form.Group>
-                                <Form.Group className="mb-3">
-                                    <Form.Label className="text-light">Picture</Form.Label>
-                                    <Form.Control
-                                        type="file"
-                                        onChange={(e) => setPictureField(e.target.files[0])}
-                                    />
+                                <Form.Group className="mb-3 loginGroup">
+                                    <input type="file"
+                                        ref={passwordField}
+                                        required
+                                        onChange={(e) => setPictureField(e.target.files[0])} />
+                                    <label>Picture</label>
                                 </Form.Group>
                                 <p className="text-light">
                                     Sudah punya akun? Silakan <Link to="/login">Login</Link>
