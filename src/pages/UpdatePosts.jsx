@@ -72,7 +72,7 @@ export default function UpdatePosts() {
 
     return (
         <div className="bg-allform">
-            <Card style={{ width: '65rem' }} className="position-absolute top-50 start-50 translate-middle border-light">
+            <Card style={{ width: '65rem' }} className="position-absolute top-50 start-50 translate-middle border-light radius">
                 <Card.Body className="bg-form radius shadow-lg">
                     <div className="row">
                         <div className="col">
